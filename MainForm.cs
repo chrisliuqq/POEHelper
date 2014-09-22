@@ -112,14 +112,14 @@ namespace POEHelper
 
         private void SendKeyboardMessage(string msg)
         {
+            hWnd = Win32API.GetForegroundWindow();
+            Clipboard.SetText(msg);
 
             SendKeys.Send("{ENTER}");
             SendKeys.Flush();
-            foreach (char c in msg)
-            {
-                SendKeys.Send(c.ToString());
-            }
+            SendKeys.Send("^{v}");
             SendKeys.Flush();
+
             SendKeys.Send("{ENTER}");
             SendKeys.Flush();
         }

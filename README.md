@@ -10,6 +10,7 @@ A macro to send oos, itemlevel, remaining
 原始碼：https://github.com/chrisliuqq/POEHelper
 
 測試環境：win7 64bit，.net Framework 4.5 以上
+
 --
 ```
 F2：/oos
@@ -22,7 +23,9 @@ F4：/itemlevel
 
 --
 
-已知 feature：雖然 code 裡面有 findwindow 但實際上根本沒透過 win32api 去抓 hwnd，而是直接送出 key 給前景，
+###已知 feature
+
+雖然 code 裡面有 findwindow 但實際上根本沒透過 win32api 去抓 hwnd，而是直接送出 key 給前景，
 所以如果你開著這個程式在筆記本上按 F2 的話，就會吐 /oos 給你看
 沒有人會在前景不是 POE 的時候又想打 oos 吧…
 

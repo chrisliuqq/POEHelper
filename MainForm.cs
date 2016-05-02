@@ -14,6 +14,7 @@ namespace POEHelper
     public partial class MainForm : Form
     {
         public IntPtr hWnd;
+        private int recoverType = 0;
 
         private enum KeyHelp
         {
@@ -49,6 +50,11 @@ namespace POEHelper
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             UnRegisterKey();
+        }
+
+        private void comboBoxChannel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            recoverType = this.comboBoxChannel.SelectedIndex;
         }
 
         #endregion
@@ -122,10 +128,34 @@ namespace POEHelper
 
             SendKeys.Send("{ENTER}");
             SendKeys.Flush();
+
+            if (recoverType == 1)
+            {
+                Clipboard.SetText("&");
+                SendKeys.Send("{ENTER}");
+                SendKeys.Flush();
+                SendKeys.Send("^{v}");
+                SendKeys.Flush();
+
+                SendKeys.Send("{ENTER}");
+                SendKeys.Flush();
+            }
+            else if (recoverType == 2)
+            {
+                Clipboard.SetText("%");
+                SendKeys.Send("{ENTER}");
+                SendKeys.Flush();
+                SendKeys.Send("^{v}");
+                SendKeys.Flush();
+
+                SendKeys.Send("{ENTER}");
+                SendKeys.Flush();
+            }
         }
+
 
         #endregion
 
-        
+
     }
 }

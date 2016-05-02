@@ -30,11 +30,13 @@
         {
             this.buttonSetting = new System.Windows.Forms.Button();
             this.checkBoxGlobalHotKey = new System.Windows.Forms.CheckBox();
+            this.labelChannel = new System.Windows.Forms.Label();
+            this.comboBoxChannel = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // buttonSetting
             // 
-            this.buttonSetting.Location = new System.Drawing.Point(197, 12);
+            this.buttonSetting.Location = new System.Drawing.Point(131, 12);
             this.buttonSetting.Name = "buttonSetting";
             this.buttonSetting.Size = new System.Drawing.Size(75, 23);
             this.buttonSetting.TabIndex = 0;
@@ -53,11 +55,36 @@
             this.checkBoxGlobalHotKey.UseVisualStyleBackColor = true;
             this.checkBoxGlobalHotKey.CheckedChanged += new System.EventHandler(this.checkBoxGlobalHotKey_CheckedChanged);
             // 
+            // labelChannel
+            // 
+            this.labelChannel.AutoSize = true;
+            this.labelChannel.Location = new System.Drawing.Point(12, 52);
+            this.labelChannel.Name = "labelChannel";
+            this.labelChannel.Size = new System.Drawing.Size(65, 12);
+            this.labelChannel.TabIndex = 2;
+            this.labelChannel.Text = "回復頻道：";
+            // 
+            // comboBoxChannel
+            // 
+            this.comboBoxChannel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxChannel.FormattingEnabled = true;
+            this.comboBoxChannel.Items.AddRange(new object[] {
+            "無",
+            "公會",
+            "隊伍"});
+            this.comboBoxChannel.Location = new System.Drawing.Point(83, 49);
+            this.comboBoxChannel.Name = "comboBoxChannel";
+            this.comboBoxChannel.Size = new System.Drawing.Size(123, 20);
+            this.comboBoxChannel.TabIndex = 3;
+            this.comboBoxChannel.SelectedIndexChanged += new System.EventHandler(this.comboBoxChannel_SelectedIndexChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 47);
+            this.ClientSize = new System.Drawing.Size(218, 90);
+            this.Controls.Add(this.comboBoxChannel);
+            this.Controls.Add(this.labelChannel);
             this.Controls.Add(this.checkBoxGlobalHotKey);
             this.Controls.Add(this.buttonSetting);
             this.Name = "MainForm";
@@ -72,6 +99,8 @@
 
         private System.Windows.Forms.Button buttonSetting;
         private System.Windows.Forms.CheckBox checkBoxGlobalHotKey;
+        private System.Windows.Forms.Label labelChannel;
+        private System.Windows.Forms.ComboBox comboBoxChannel;
     }
 }
 
